@@ -15,6 +15,7 @@ namespace Wba.Oefening.Games.Core
                     Id = 1,
                     Title = "Wolfenstein Colossus",
                     Rating = 1,
+                    ImageName = "wolfenstein.jpg",
                     Developer = 
                         developerRepository.GetDevelopers().
                             First(d => d.Id == 1)
@@ -23,6 +24,7 @@ namespace Wba.Oefening.Games.Core
                 {
                     Id = 2,
                     Title ="FIFA 2020",
+                    ImageName = "fifa20.jpg",
                     Rating = 2,
                     Developer =
                         developerRepository.GetDevelopers().
@@ -32,6 +34,7 @@ namespace Wba.Oefening.Games.Core
                 {
                     Id = 3,
                     Title ="Elder Scrolls V: Skyrim",
+                    ImageName = "elder_skyrim.jpg",
                     Rating = 5,
                     Developer =
                         developerRepository.GetDevelopers().
