@@ -39,7 +39,20 @@ namespace cu.ViewModels.Lesvoorbeeld.Controllers
 
         public IActionResult GameInfo(int id)
         {
-            return View();
+            //declare the model
+            GamesGameInfoViewModel gamesGameInfoViewModel
+                = new GamesGameInfoViewModel();
+            //get the game by id
+            var game = _gameRepository.GetGames()
+                .FirstOrDefault(g => g.Id == id);
+            //fill the model
+            gamesGameInfoViewModel.Id = game?.Id ?? 0;
+            gamesGameInfoViewModel.Title = game?.Title ?? "<NoName>";
+            gamesGameInfoViewModel.ImageName = game?.ImageName ?? "<NoName>";
+            gamesGameInfoViewModel.Rating = game?.Rating ?? 0;
+            gamesGameInfoViewModel.Developer = game?.Developer?.Name ?? "<NoDeveloper>";
+            //pass to view 
+            return View(gamesGameInfoViewModel);
         }
     }
 }
