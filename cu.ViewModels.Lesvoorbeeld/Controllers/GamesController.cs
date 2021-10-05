@@ -26,13 +26,30 @@ namespace cu.ViewModels.Lesvoorbeeld.Controllers
             GamesGetGamesViewModel gamesGetGamesViewModel
                 = new GamesGetGamesViewModel();
             //get the games from the repo
-            gamesGetGamesViewModel.Titles = new List<string>();
+            gamesGetGamesViewModel.Games = new List<GamesGameInfoViewModel>();
             //get games from repo/database
-            foreach (var game in _gameRepository.GetGames())
+            //using select method
+            gamesGetGamesViewModel.Games=
+                _gameRepository.GetGames().Select(g => new GamesGameInfoViewModel
             {
-                gamesGetGamesViewModel.Titles.Add(game?.Title ?? "<NoTitle>");
+                Id = g?.Id ?? 0,
+                Title = g?.Title ?? "<NoTitle>"
             }
+            );
+            
+            //foreach (var game in _gameRepository.GetGames())
+            //{
+            //    gamesGetGamesViewModel.Games.Add(
+            //        //add a gamesGameInfoViewModel
+            //        new GamesGameInfoViewModel
+            //        {
+            //            Id = game?.Id ??0,
+            //            Title = game?.Title ?? "<NoTitle>"
+            //        }
+            //        );
+            //}
             ViewBag.PageTitle = "Our Games";
+            
             //send to the view
             return View(gamesGetGamesViewModel);
         }

@@ -7,6 +7,8 @@ namespace cu.ViewModels.Lesvoorbeeld.ViewModels
 {
     public class GamesGetGamesViewModel
     {
-        public List<string> Titles { get; set; }
+        public IEnumerable<GamesGameInfoViewModel> Games { get; set; }
+        
+
     }
 }
