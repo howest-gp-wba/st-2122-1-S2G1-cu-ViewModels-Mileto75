@@ -33,7 +33,8 @@ namespace cu.ViewModels.Lesvoorbeeld.Controllers
                 _gameRepository.GetGames().Select(g => new GamesGameInfoViewModel
             {
                 Id = g?.Id ?? 0,
-                Title = g?.Title ?? "<NoTitle>"
+                Title = g?.Title ?? "<NoTitle>",
+                ImageName = g?.ImageName ?? "..."
             }
             );
             

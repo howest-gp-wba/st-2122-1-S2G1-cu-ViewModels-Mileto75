@@ -50,6 +50,14 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
+/*
+custom bootstrap css
+-----------------------------------------------*/
+.card-img-top {
+    width: 80%;
+    height: 100%;
+    object-fit:cover;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */

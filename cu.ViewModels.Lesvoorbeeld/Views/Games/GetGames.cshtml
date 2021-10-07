@@ -2,14 +2,23 @@
 
 
 <h1>@ViewBag.PageTitle</h1>
-<table class="table table-hover table-responsive-sm">
-    <tr>
-        <th>Title</th>
-    </tr>
+
+<div class="row">
     @foreach (var game in Model.Games)
     {
-        <tr>
-            <td><a href="/Games/GameInfo/@game.Id">@game.Title</a> </td>
-        </tr>
+        <div class="card col-3 m-1" style="width: 18rem;">
+            <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
+
+            <img asp-append-version="true" src="/img/@game.ImageName" class="card-img-top mx-auto m-1" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@game.Title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@game.Developer</h6>
+
+                <a asp-controller="Games"
+                   asp-action="GameInfo"
+                   asp-route-id="@game.Id" class="btn btn-primary">Info</a>
+            </div>
+        </div>
     }
-</table>
+</div>
+
