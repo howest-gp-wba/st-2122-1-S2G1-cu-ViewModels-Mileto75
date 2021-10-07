@@ -2,17 +2,10 @@
 
 
 <h1>Game Info</h1>
-<div class="card" style="width: 18rem;">
-    <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
-
-    <img asp-append-version="true" src="/img/@Model.ImageName" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">@Model.Title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">@Model.Developer</h6>
-        
-        <a asp-controller="Games" 
-           asp-action="GetGames" class="btn btn-primary">Back</a>
-    </div>
+<div class="card mx-auto" style="width: 18rem;">
+    <partial name="_gameCardPartial" model="@Model" />
+    <a asp-controller="Games"
+       asp-action="GetGames" class="btn btn-primary w-25 m-1">Back</a>
 </div>
 
 
