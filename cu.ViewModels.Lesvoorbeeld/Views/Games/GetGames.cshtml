@@ -6,13 +6,14 @@
 <div class="row">
     @foreach (var game in Model.Games)
     {
-    <div class="card col-3 m-1" style="width: 18rem;">
-        @*call partial view*@
-        <partial name="_gameCardPartial" model="@game" />
-        <a asp-controller="Games"
-           asp-action="GameInfo"
-           asp-route-id="@game.Id" class="btn btn-primary">Info</a>
-    </div>
+        <div class="card col-3 m-1" style="width: 18rem;">
+            @*call partial view*@
+            <partial name="_gameCardPartial" model="@game" />
+            <a asp-controller="Games"
+               asp-action="GameInfo"
+               asp-route-id="@game.Id" class="btn btn-primary">Info</a>
+        </div>
     }
 </div>
+
 

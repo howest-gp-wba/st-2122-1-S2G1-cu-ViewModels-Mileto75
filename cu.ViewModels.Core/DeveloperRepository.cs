@@ -10,7 +10,8 @@ namespace Wba.Oefening.Games.Core
             {
                 new Developer{ Id = 1, Name = "Ubisoft" },
                 new Developer{ Id = 2, Name = "Electronic Arts" },
-                new Developer{ Id = 3, Name = "Bethesda" }
+                new Developer{ Id = 3, Name = "Bethesda" },
+                new Developer{ Id = 3, Name = "Rockstar Games" }
             };
         }
     }
